@@ -19,8 +19,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "lint": "eslint --fix ./src/**/*.{js,jsx,ts,tsx} ",
-    "prettier:fix": "prettier --write ./src/**/*.{js.jsx,ts,tsx}",
+    "lint": "eslint --fix ./src/**/*.{ts,tsx} ",
+    "prettier:fix": "prettier --write ./src/**/*.{ts,tsx}",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
