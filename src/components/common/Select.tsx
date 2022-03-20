@@ -40,6 +40,8 @@ const List = styled.ul`
   border: 1px solid #efeff1;
   border-radius: 5px;
   box-shadow: -2px 2px 9px #d9dadd;
+  z-index: 10;
+  background-color: white;
 `;
 
 const Option = styled.li`

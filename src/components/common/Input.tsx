@@ -6,11 +6,13 @@ const WIDTH = 195;
 const BaseInput = styled.input`
   padding: 0.5em;
   border-radius: 3px;
-  max-width: ${WIDTH}px;
+  width: ${WIDTH}px;
   outline: none;
   border: 1px solid #cbd1e0;
   color: #626673;
   font-size: 1em;
+  box-sizing: border-box;
+
   &:focus {
     border-color: #82a2ff;
     border-width: 2px;
