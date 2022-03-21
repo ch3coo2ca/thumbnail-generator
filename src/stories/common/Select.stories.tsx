@@ -30,3 +30,11 @@ BaseSelect.args = {
   ],
   onChange: () => {}
 };
+
+export const ScrollSelect = Template.bind({});
+ScrollSelect.args = {
+  items: [...new Array(10)].map((_, i) => ({
+    name: `item${i}`,
+    value: `val${i}`
+  }))
+};

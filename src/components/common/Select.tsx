@@ -1,8 +1,9 @@
-import {useEffect, useState} from 'react';
+import {useState} from 'react';
 
 import styled from 'styled-components';
 
 const WIDTH = 195;
+const MAX_HEIGHT = 150;
 const SelectBox = styled.div`
   width: ${WIDTH}px;
 `;
@@ -32,6 +33,7 @@ const Button = styled.button`
 const List = styled.ul`
   width: 100%;
   max-width: ${WIDTH}px;
+  max-height: ${MAX_HEIGHT}px;
   list-style: none;
   position: absolute;
   padding: 0;
@@ -42,6 +44,13 @@ const List = styled.ul`
   box-shadow: -2px 2px 9px #d9dadd;
   z-index: 10;
   background-color: white;
+  overflow-y: scroll;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 `;
 
 const Option = styled.li`
