@@ -1,5 +1,7 @@
+import EditorContainer from 'components/EditorContainer';
+
 function App() {
-  return <div className="App">init</div>;
+  return <EditorContainer />;
 }
 
 export default App;

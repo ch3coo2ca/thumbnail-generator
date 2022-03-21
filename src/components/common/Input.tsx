@@ -21,17 +21,16 @@ const BaseInput = styled.input`
 
 type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'onChange'>;
 interface InputProps extends HTMLInputProps {
-  ref?: React.ForwardedRef<HTMLInputElement>;
   onChange: (value: string) => void;
 }
 
-const Input: React.FC<InputProps> = forwardRef(
+const Input: React.FC<InputProps> = forwardRef<HTMLInputElement, InputProps>(
   ({onChange, ...inputAttrs}, ref) => {
     return (
       <BaseInput
+        {...inputAttrs}
         ref={ref}
         onChange={(e) => onChange(e.target.value)}
-        {...inputAttrs}
       />
     );
   }
