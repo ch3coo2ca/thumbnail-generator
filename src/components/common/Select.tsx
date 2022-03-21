@@ -59,22 +59,20 @@ export interface SelectItemType {
 }
 
 interface SelectProps {
+  value: string;
   items: SelectItemType[];
   onChange: (value: string) => void;
 }
 
-const Select: React.FC<SelectProps> = ({items, onChange}) => {
-  const [selected, setSelected] = useState<SelectItemType>(items[0]);
+const Select: React.FC<SelectProps> = ({value, items, onChange}) => {
   const [open, setOpen] = useState<boolean>(false);
-
-  useEffect(() => onChange(selected.value), [selected, onChange]);
 
   const toggleList = () => setOpen((prevState) => !prevState);
 
   const handleClickItem = (e: React.MouseEvent<HTMLUListElement>) => {
     const index = Number((e.target as HTMLUListElement).getAttribute('value'));
 
-    setSelected(items[index]);
+    onChange(items[index].name);
     toggleList();
   };
 
@@ -91,7 +89,7 @@ const Select: React.FC<SelectProps> = ({items, onChange}) => {
   return (
     <SelectBox>
       <Button onBlur={handleBlur} onClick={toggleList}>
-        <span>{selected.name}</span>
+        <span>{value || items[0]?.value}</span>
         <span> {open ? '▲' : '▼'} </span>
       </Button>
 
