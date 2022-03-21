@@ -10,6 +10,4 @@ export default {
 const Template: ComponentStory<typeof Input> = (args) => <Input {...args} />;
 
 export const BaseInput = Template.bind({});
-BaseInput.args = {
-  onChange: () => {}
-};
+BaseInput.args = {};
