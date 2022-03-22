@@ -3,5 +3,5 @@ export interface StyleConfig {
   text: string;
   textColor: string;
   font: string;
-  fontSize: string;
+  fontSize: number;
 }

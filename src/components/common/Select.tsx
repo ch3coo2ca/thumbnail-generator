@@ -64,11 +64,11 @@ const Option = styled.li`
 
 export interface SelectItemType {
   name: string;
-  value: string;
+  value: string | number;
 }
 
 interface SelectProps {
-  value: string;
+  value: string | number;
   items: SelectItemType[];
   onChange: (value: string) => void;
 }

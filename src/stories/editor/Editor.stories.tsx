@@ -13,7 +13,10 @@ export default {
 const Template: ComponentStory<typeof Editor> = (args) => {
   const [{config}, updateArgs] = useArgs();
 
-  const handleUpdateConfig = (key: keyof StyleConfig, value: string) => {
+  const handleUpdateConfig = (
+    key: keyof StyleConfig,
+    value: string | number
+  ) => {
     updateArgs({config: {...config, [key]: value}});
   };
 
@@ -27,6 +30,6 @@ Base.args = {
     text: 'hello',
     textColor: '#000',
     font: '',
-    fontSize: '10'
+    fontSize: 10
   }
 };
