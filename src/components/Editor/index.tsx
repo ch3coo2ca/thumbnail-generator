@@ -1,6 +1,6 @@
 import {useMemo} from 'react';
 
-import {defaultFonts} from 'constants/App';
+import {DEFAULT_FONTS, FONT_SIZE_LIST} from 'constants/App';
 import {StyleConfig} from 'models/Editor';
 
 import {Input, Select, ColorPicker} from 'components/common';
@@ -17,11 +17,11 @@ const EditorContainer = styled.div`
 
 interface EditorProps {
   config: StyleConfig;
-  onChange: (key: keyof StyleConfig, value: string) => void;
+  onChange: (key: keyof StyleConfig, value: string | number) => void;
 }
 
 const Editor: React.FC<EditorProps> = ({config, onChange}) => {
-  const fonts = useMemo(() => [...defaultFonts, ...getFontFamilyList()], []);
+  const fonts = useMemo(() => [...DEFAULT_FONTS, ...getFontFamilyList()], []);
 
   return (
     <EditorContainer>
@@ -52,12 +52,9 @@ const Editor: React.FC<EditorProps> = ({config, onChange}) => {
       </EditorItem>
       <EditorItem title="Font Size">
         <Select
-          items={[
-            {value: '10', name: '10'},
-            {value: '12', name: '12'}
-          ]}
+          items={FONT_SIZE_LIST.map((size) => ({value: size, name: `${size}`}))}
           value={config.fontSize}
-          onChange={(value: string) => onChange('fontSize', value)}
+          onChange={(value: string) => onChange('fontSize', Number(value))}
         />
       </EditorItem>
     </EditorContainer>

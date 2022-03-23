@@ -1,6 +1,6 @@
 import {ComponentMeta, ComponentStory} from '@storybook/react';
 
-import {FONT_SIZE_LIST, DEFAULT_FONTS, DEFAULT_CONFIG} from 'constants/App';
+import {DEFAULT_FONTS, DEFAULT_CONFIG} from 'constants/App';
 import Preview from 'components/Panel/Preview';
 
 export default {
