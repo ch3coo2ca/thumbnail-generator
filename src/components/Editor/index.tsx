@@ -13,6 +13,7 @@ import styled from 'styled-components';
 const EditorContainer = styled.div`
   display: grid;
   gap: 1em 0;
+  height: fit-content;
 `;
 
 interface EditorProps {

@@ -4,14 +4,14 @@ import styled from 'styled-components';
 
 const PreviewContainer = styled.div`
   width: 100%;
-  max-width: 700px;
+  min-width: 800px;
   height: 500px;
   max-height: 500px;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 2em;
-  box-sizing: content-box;
+  box-sizing: border-box;
 `;
 
 const Text = styled.div`

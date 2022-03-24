@@ -5,16 +5,10 @@ import styled from 'styled-components';
 import {StyleConfig} from 'models/Editor';
 
 const StyledPanel = styled.div`
-  padding: 2em;
-  display: flex;
-  justify-content: center;
-`;
-
-const Wrapper = styled.div`
   width: 70%;
   max-width: 1000px;
 
-  & > div {
+  & > div:first-child {
     margin-bottom: 2em;
   }
 `;
@@ -25,10 +19,8 @@ interface PanelProps {
 const Panel: React.FC<PanelProps> = ({config}) => {
   return (
     <StyledPanel>
-      <Wrapper>
-        <Preview {...config} />
-        <Toolbar />
-      </Wrapper>
+      <Preview {...config} />
+      <Toolbar />
     </StyledPanel>
   );
 };
