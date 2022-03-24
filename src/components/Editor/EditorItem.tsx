@@ -12,6 +12,7 @@ const Title = styled.div`
   width: 150px;
   overflow: hidden;
   text-overflow: ellipsis;
+  user-select: none;
 `;
 
 interface EditorItemProps {

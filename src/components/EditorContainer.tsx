@@ -11,7 +11,15 @@ import styled from 'styled-components';
 const StyledHeader = styled.h1`
   color: white;
   font-size: 3em;
-  /* text-shadow: 1px 1px 2px #bebebe; */
+  font-family: Carter one, cursive;
+  user-select: none;
+
+  @media screen and (max-width: 768px) {
+    font-size: 2.3em;
+  }
+  @media screen and (max-width: 500px) {
+    font-size: 1.5em;
+  }
 `;
 
 const StyledEditorContainer = styled.div`
@@ -22,6 +30,8 @@ const StyledEditorContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 1em;
+  box-sizing: border-box;
 `;
 
 const Wrapper = styled.div`
@@ -33,6 +43,10 @@ const Wrapper = styled.div`
   width: fit-content;
   border-radius: 10px;
   margin-top: 1em;
+
+  @media screen and (max-width: 1024px) {
+    flex-direction: column;
+  }
 `;
 
 const EditorContainer: React.FC = () => {

@@ -44,19 +44,20 @@ const StyledButton = styled.button<{
   font-size: ${(props) => styles[props.size].fontSize};
   background: transparent;
   opacity: 1;
+  font-weight: bold;
 
   ${(props) =>
     props.buttonStyle === 'CONTAINED' &&
     `
-        background-color : navy;
+        background-color : #252534;
         color : white; 
     `}
   ${(props) =>
     props.buttonStyle === 'OUTLINED' &&
     `
         background-color : white; 
-        border : 1px solid navy; 
-        color : navy;
+        border : 2px solid #252534; 
+        color : #252534;
     `}
     ${(props) =>
     props.disabled &&

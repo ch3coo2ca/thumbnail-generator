@@ -9,7 +9,11 @@ const StyledPanel = styled.div`
   max-width: 1000px;
 
   & > div:first-child {
-    margin-bottom: 2em;
+    margin-bottom: 1.5em;
+  }
+
+  @media screen and (max-width: 1024px) {
+    width: auto;
   }
 `;
 interface PanelProps {

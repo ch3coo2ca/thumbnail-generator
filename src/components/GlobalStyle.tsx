@@ -1,11 +1,14 @@
 import {createGlobalStyle} from 'styled-components';
 
-const GlobalStyle = createGlobalStyle`
+const GlobalStyle = createGlobalStyle`  
+    * {
+        font-family : Noto Sans KR, sans-serif;
+    }
     html,body {
         margin : 0; 
     }
 
-    html, body, div#root {
+    html, body, #root {
         height :100%;
     }
 `;

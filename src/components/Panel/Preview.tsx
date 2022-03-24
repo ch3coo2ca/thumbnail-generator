@@ -6,12 +6,36 @@ const PreviewContainer = styled.div`
   width: 100%;
   min-width: 800px;
   height: 500px;
-  max-height: 500px;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 2em;
   box-sizing: border-box;
+
+  @media screen and (max-width: 2560px) {
+    min-width: 900px;
+    height: 500px;
+  }
+
+  @media screen and (max-width: 1440px) {
+    min-width: 700px;
+    height: 500px;
+  }
+
+  @media screen and (max-width: 1024px) {
+    min-width: 600px;
+    height: 400px;
+  }
+
+  @media screen and (max-width: 768px) {
+    min-width: 0;
+    height: 300px;
+  }
+
+  @media screen and (max-width: 425px) {
+    height: auto;
+    min-height: 200px;
+  }
 `;
 
 const Text = styled.div`
@@ -20,6 +44,7 @@ const Text = styled.div`
   max-height: 100%;
   overflow: hidden;
   text-overflow: ellipsis;
+  user-select: none;
 `;
 
 const Preview: React.FC<StyleConfig> = (props) => {

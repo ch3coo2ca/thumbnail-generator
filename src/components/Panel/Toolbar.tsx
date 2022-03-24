@@ -13,8 +13,12 @@ const StyledToolbar = styled.div`
 const Toolbar: React.FC = () => {
   return (
     <StyledToolbar>
-      <Button buttonStyle="OUTLINED"> Copy to Clipboard</Button>
-      <Button buttonStyle="OUTLINED"> Download Image </Button>
+      <Button buttonStyle="OUTLINED" size="SMALL">
+        Copy to Clipboard
+      </Button>
+      <Button buttonStyle="OUTLINED" size="SMALL">
+        Download Image
+      </Button>
     </StyledToolbar>
   );
 };
