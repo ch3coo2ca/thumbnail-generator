@@ -4,13 +4,19 @@ const GlobalStyle = createGlobalStyle`
     * {
         font-family : Noto Sans KR, sans-serif;
     }
-    html,body {
-        margin : 0; 
-    }
 
     html, body, #root {
-        height :100%;
+        height: 100%;
     }
-`;
+
+    body {
+        margin: 0 auto;
+    }
+
+    #root {
+        overflow-y: hidden;
+    }
+
+    `;
 
 export default GlobalStyle;

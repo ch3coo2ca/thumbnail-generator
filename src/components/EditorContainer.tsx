@@ -32,6 +32,7 @@ const StyledEditorContainer = styled.div`
   align-items: center;
   padding: 1em;
   box-sizing: border-box;
+  overflow-y: auto;
 `;
 
 const Wrapper = styled.div`
@@ -46,6 +47,10 @@ const Wrapper = styled.div`
 
   @media screen and (max-width: 1024px) {
     flex-direction: column;
+  }
+
+  @media screen and (max-width: 475px) {
+    padding: 1em;
   }
 `;
 

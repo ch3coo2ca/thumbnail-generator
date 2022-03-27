@@ -13,12 +13,12 @@ const PreviewContainer = styled.div`
   box-sizing: border-box;
 
   @media screen and (max-width: 2560px) {
-    min-width: 900px;
+    min-width: 800px;
     height: 500px;
   }
 
   @media screen and (max-width: 1440px) {
-    min-width: 700px;
+    min-width: 600px;
     height: 500px;
   }
 

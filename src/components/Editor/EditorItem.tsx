@@ -3,6 +3,11 @@ import styled from 'styled-components';
 const Item = styled.div`
   display: flex;
   align-items: center;
+
+  & > *:last-child {
+    flex: 1;
+    width: 100%;
+  }
 `;
 
 const Title = styled.div`
