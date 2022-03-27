@@ -13,6 +13,7 @@ const StyledHeader = styled.h1`
   font-size: 3em;
   font-family: Carter one, cursive;
   user-select: none;
+  text-align: center;
 
   @media screen and (max-width: 768px) {
     font-size: 2.3em;
@@ -28,7 +29,6 @@ const StyledEditorContainer = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   padding: 1em;
   box-sizing: border-box;

@@ -19,7 +19,7 @@ const PreviewContainer = styled.div`
 
   @media screen and (max-width: 1440px) {
     min-width: 600px;
-    height: 500px;
+    height: 450px;
   }
 
   @media screen and (max-width: 1024px) {
@@ -29,12 +29,12 @@ const PreviewContainer = styled.div`
 
   @media screen and (max-width: 768px) {
     min-width: 0;
-    height: 300px;
+    height: 250px;
   }
 
   @media screen and (max-width: 425px) {
     height: auto;
-    min-height: 200px;
+    min-height: 150px;
   }
 `;
 
