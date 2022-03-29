@@ -1,5 +1,7 @@
 import {StyleConfig} from 'models/Editor';
 
+import {convertPxToEm} from 'utils/App';
+
 import styled from 'styled-components';
 
 const PreviewContainer = styled.div`
@@ -25,16 +27,19 @@ const PreviewContainer = styled.div`
   @media screen and (max-width: 1024px) {
     min-width: 600px;
     height: 400px;
+    font-size: 14px;
   }
 
   @media screen and (max-width: 768px) {
     min-width: 0;
     height: 250px;
+    font-size: 10px;
   }
 
   @media screen and (max-width: 425px) {
     height: auto;
     min-height: 150px;
+    font-size: 8px;
   }
 `;
 
@@ -51,7 +56,15 @@ const Preview: React.FC<StyleConfig> = (props) => {
   const {backgroundColor, font, fontSize, text, textColor} = props;
   return (
     <PreviewContainer style={{backgroundColor}}>
-      <Text style={{fontSize, color: textColor, fontFamily: font}}>{text}</Text>
+      <Text
+        style={{
+          fontSize: `${convertPxToEm(fontSize)}em`,
+          color: textColor,
+          fontFamily: font
+        }}
+      >
+        {text}
+      </Text>
     </PreviewContainer>
   );
 };

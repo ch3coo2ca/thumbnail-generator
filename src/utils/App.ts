@@ -16,3 +16,7 @@ export const getFontFamilyList = () => {
 
   return [...new Set(list)];
 };
+
+export const convertPxToEm = (px: number) => {
+  return +(px / 16).toFixed(3);
+};
