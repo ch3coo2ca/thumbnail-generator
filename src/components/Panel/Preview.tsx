@@ -1,3 +1,4 @@
+import {ForwardedRef, forwardRef} from 'react';
 import {StyleConfig} from 'models/Editor';
 
 import {convertPxToEm} from 'utils/App';
@@ -52,10 +53,17 @@ const Text = styled.div`
   user-select: none;
 `;
 
-const Preview: React.FC<StyleConfig> = (props) => {
+interface PreviewProps extends StyleConfig {
+  ref?: ForwardedRef<HTMLDivElement>;
+}
+
+const Preview: React.FC<PreviewProps> = forwardRef<
+  HTMLDivElement,
+  PreviewProps
+>((props, ref) => {
   const {backgroundColor, font, fontSize, text, textColor} = props;
   return (
-    <PreviewContainer style={{backgroundColor}}>
+    <PreviewContainer ref={ref} style={{backgroundColor}}>
       <Text
         style={{
           fontSize: `${convertPxToEm(fontSize)}em`,
@@ -67,6 +75,6 @@ const Preview: React.FC<StyleConfig> = (props) => {
       </Text>
     </PreviewContainer>
   );
-};
+});
 
 export default Preview;

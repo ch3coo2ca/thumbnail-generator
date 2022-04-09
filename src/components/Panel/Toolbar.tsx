@@ -1,5 +1,7 @@
 import {Button} from 'components/common';
 
+import useAsyncCallback from 'hooks/useAsyncCallback';
+
 import styled from 'styled-components';
 
 const StyledToolbar = styled.div`
@@ -10,12 +12,32 @@ const StyledToolbar = styled.div`
     flex: 1;
   }
 `;
-const Toolbar: React.FC = () => {
+
+interface ToolbarProps {
+  onCopy: () => Promise<void>;
+}
+
+type CopyButtonProps = Pick<ToolbarProps, 'onCopy'>;
+
+const CopyButton = ({onCopy}: CopyButtonProps) => {
+  const {execute, isLoading} = useAsyncCallback(onCopy);
+
+  return (
+    <Button
+      buttonStyle="OUTLINED"
+      disabled={isLoading}
+      size="SMALL"
+      onClick={execute}
+    >
+      {isLoading ? 'Copying...' : 'Copy to Clipboard'}
+    </Button>
+  );
+};
+
+const Toolbar: React.FC<ToolbarProps> = ({onCopy}) => {
   return (
     <StyledToolbar>
-      <Button buttonStyle="OUTLINED" size="SMALL">
-        Copy to Clipboard
-      </Button>
+      <CopyButton onCopy={onCopy} />
       <Button buttonStyle="OUTLINED" size="SMALL">
         Download Image
       </Button>

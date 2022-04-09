@@ -10,6 +10,8 @@ const useAsyncCallback = (asyncFunction: () => Promise<void>) => {
     asyncFunction()
       .then(() => setLoading(false))
       .catch((error) => {
+        //eslint-disable-next-line no-console
+        console.error(error);
         setError(error);
         setLoading(false);
       });
