@@ -77,4 +77,6 @@ const Preview: React.FC<PreviewProps> = forwardRef<
   );
 });
 
+Preview.displayName = 'Preview';
+
 export default Preview;
