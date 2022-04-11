@@ -40,10 +40,22 @@ const Panel: React.FC<PanelProps> = ({config}) => {
     });
   };
 
+  const downloadImage: () => Promise<void> = () => {
+    if (!previewRef.current)
+      return new Promise((_, reject) => reject('No target ref'));
+
+    return convertDomToImage(previewRef.current, 'jpeg').then((url) => {
+      const link = document.createElement('a');
+      link.download = `thumbnail_${+new Date()}`;
+      link.href = url;
+      link.click();
+    });
+  };
+
   return (
     <StyledPanel>
       <Preview ref={previewRef} {...config} />
-      <Toolbar onCopy={copyToImage} />
+      <Toolbar onCopy={copyToImage} onDownload={downloadImage} />
     </StyledPanel>
   );
 };
