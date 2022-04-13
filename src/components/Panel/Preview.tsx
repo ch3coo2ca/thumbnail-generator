@@ -57,10 +57,7 @@ interface PreviewProps extends StyleConfig {
   ref?: ForwardedRef<HTMLDivElement>;
 }
 
-const Preview: React.FC<PreviewProps> = forwardRef<
-  HTMLDivElement,
-  PreviewProps
->((props, ref) => {
+const Preview = forwardRef<HTMLDivElement, PreviewProps>((props, ref) => {
   const {backgroundColor, font, fontSize, text, textColor} = props;
   return (
     <PreviewContainer ref={ref} style={{backgroundColor}}>
