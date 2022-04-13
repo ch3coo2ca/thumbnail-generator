@@ -9,8 +9,6 @@ export const DEFAULT_FONTS = [
   'Cominc Sans MS'
 ] as const;
 
-export const FONT_SIZE_LIST = [60, 70, 80, 90, 100] as const;
-
 export const DEFAULT_CONFIG: StyleConfig = {
   backgroundColor: '#aed581',
   textColor: 'white',

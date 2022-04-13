@@ -1,9 +1,9 @@
 import {useMemo} from 'react';
 
-import {DEFAULT_FONTS, FONT_SIZE_LIST} from 'constants/App';
+import {DEFAULT_FONTS} from 'constants/App';
 import {StyleConfig} from 'models/Editor';
 
-import {Input, Select, ColorPicker} from 'components/common';
+import {Input, Select, ColorPicker, Range} from 'components/common';
 import {EditorItem} from './EditorItem';
 
 import {getFontFamilyList} from 'utils/App';
@@ -52,10 +52,12 @@ const Editor: React.FC<EditorProps> = ({config, onChange}) => {
         />
       </EditorItem>
       <EditorItem title="Font Size">
-        <Select
-          items={FONT_SIZE_LIST.map((size) => ({value: size, name: `${size}`}))}
+        <Range
+          min="60"
+          max="200"
           value={config.fontSize}
-          onChange={(value: string) => onChange('fontSize', Number(value))}
+          useInputControl
+          onChange={(value: string) => onChange('fontSize', value)}
         />
       </EditorItem>
     </EditorContainer>
