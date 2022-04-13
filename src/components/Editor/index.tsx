@@ -53,10 +53,10 @@ const Editor: React.FC<EditorProps> = ({config, onChange}) => {
       </EditorItem>
       <EditorItem title="Font Size">
         <Range
-          min="60"
-          max="200"
-          value={config.fontSize}
           useInputControl
+          max="200"
+          min="60"
+          value={config.fontSize}
           onChange={(value: string) => onChange('fontSize', value)}
         />
       </EditorItem>

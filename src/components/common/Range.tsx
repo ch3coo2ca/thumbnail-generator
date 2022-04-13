@@ -31,31 +31,31 @@ const Range: React.FC<RangeProps> = ({
 }) => {
   const inputRef = createRef<HTMLInputElement>();
 
-  const handleChangeInput = (v: string) => {
-    if (!inputRef.current) return;
+  //   const handleChangeInput = (v: string) => {
+  //     if (!inputRef.current) return;
 
-    console.log(inputRef.current.value, inputRef.current.checkValidity());
-    if (!inputRef.current.checkValidity()) return;
+  //     console.log(inputRef.current.value, inputRef.current.checkValidity());
+  //     if (!inputRef.current.checkValidity()) return;
 
-    onChange(v);
-  };
+  //     onChange(v);
+  //   };
 
   return (
     <StyledRange>
       <RangeInput
+        max={max}
+        min={min}
         type="range"
         value={value}
-        min={min}
-        max={max}
         onChange={onChange}
       />
       {useInputControl && (
         <NumberInput
-          type="number"
-          ref={inputRef}
-          value={value}
-          min={min}
           max={max}
+          min={min}
+          ref={inputRef}
+          type="number"
+          value={value}
           onChange={onChange}
         />
       )}
